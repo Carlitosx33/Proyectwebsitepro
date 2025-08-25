@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nutrition & Diets | ProAthlete</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      background-color: red;
+      padding: 30px 20px;
+      color: white;
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    .back-btn {
+      position: fixed; /* siempre visible */
+      left: 20px;
+      top: 20px;
+      background-color: white;
+      color: red;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 24px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      z-index: 1000;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .back-btn:hover {
+      transform: scale(1.1);
+      background-color: #f5f5f5;
+    }
+
+    /* Circulos profesionales */
+    .stories {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      overflow-x: auto;
+      padding: 20px 0;
+    }
+
+    .story {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .story img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 4px solid red;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .story img:hover {
+      transform: scale(1.1);
+    }
+
+    .story p {
+      margin-top: 8px;
+      font-size: 15px;
+      color: gray;
+      font-weight: bold;
+    }
+
+    /* Carrusel de dietas y recetas */
+    .carousel-container {
+      position: relative;
+      width: 90%;
+      margin: 30px auto 50px;
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .card {
+      flex: 0 0 250px;
+      margin: 0 10px;
+      background-color: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      transition: transform 0.2s;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card h2 {
+      color: red;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: gray;
+    }
+
+    .card button {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      margin-top: 15px;
+      cursor: pointer;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .card button:hover {
+      opacity: 0.9;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: red;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      z-index: 2;
+    }
+
+    .carousel-btn.left {
+      left: -20px;
+    }
+
+    .carousel-btn.right {
+      right: -20px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 15px;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Botón Back -->
+  <button class="back-btn" onclick="window.location.href='../index.html'">←</button>
+
+  <header>
+    <h1>Nutrition & Diets</h1>
+    <p>Fuel your body with the best diets for athletes</p>
+  </header>
+
+  <!-- Profesionales -->
+  <section class="stories">
+    <div class="story"><img src="nutri1.jpg" alt=""><p>Sports Nutritionist</p></div>
+    <div class="story"><img src="nutri2.jpg" alt=""><p>Diet Coach</p></div>
+    <div class="story"><img src="nutri3.jpg" alt=""><p>Performance Expert</p></div>
+    <div class="story"><img src="nutri4.jpg" alt=""><p>Health Advisor</p></div>
+    <div class="story"><img src="nutri5.jpg" alt=""><p>Meal Planner</p></div>
+    <div class="story"><img src="nutri6.jpg" alt=""><p>Hydration Specialist</p></div>
+  </section>
+
+  <!-- Carrusel de dietas -->
+  <section class="carousel-container">
+    <button class="carousel-btn left" onclick="moveCarousel('diet', -1)">‹</button>
+    <div class="carousel-track" id="dietTrack">
+      <div class="card"><h2>High Protein Diet</h2><p>Boost muscle recovery.</p><button>Explore</button></div>
+      <div class="card"><h2>Balanced Athlete Plan</h2><p>Perfect ratio of carbs, proteins, and fats.</p><button>Explore</button></div>
+      <div class="card"><h2>Energy-Boost Diet</h2><p>Stay sharp with slow-release carbs.</p><button>Explore</button></div>
+      <div class="card"><h2>Cutting Plan</h2><p>Reduce fat while maintaining strength.</p><button>Explore</button></div>
+      <div class="card"><h2>Bulking Program</h2><p>Gain lean mass with strategic meals.</p><button>Explore</button></div>
+      <div class="card"><h2>Vegan Athlete Diet</h2><p>Plant-based nutrition optimized for performance.</p><button>Explore</button></div>
+      <div class="card"><h2>Hydration & Electrolytes</h2><p>Keep performance high with fluid balance.</p><button>Explore</button></div>
+      <div class="card"><h2>Endurance Fuel Plan</h2><p>Carb-loading strategies for long events.</p><button>Explore</button></div>
+    </div>
+    <button class="carousel-btn right" onclick="moveCarousel('diet', 1)">›</button>
+  </section>
+
+  <!-- Carrusel de recetas saludables -->
+  <section class="carousel-container">
+    <h2 style="color:red; text-align:center;">Healthy Recipes</h2>
+    <button class="carousel-btn left" onclick="moveCarousel('recipe', -1)">‹</button>
+    <div class="carousel-track" id="recipeTrack">
+      <div class="card"><h2>Chicken Salad</h2><p>Protein-packed and refreshing.</p><button>Explore</button></div>
+      <div class="card"><h2>Quinoa Bowl</h2><p>Balanced carbs, fiber, and protein.</p><button>Explore</button></div>
+      <div class="card"><h2>Oatmeal Energy Bars</h2><p>Great pre-workout snack.</p><button>Explore</button></div>
+      <div class="card"><h2>Fruit Smoothie</h2><p>Hydrating and nutrient-rich.</p><button>Explore</button></div>
+      <div class="card"><h2>Veggie Wrap</h2><p>Loaded with vitamins and fiber.</p><button>Explore</button></div>
+      <div class="card"><h2>Protein Pancakes</h2><p>Fuel muscles after training.</p><button>Explore</button></div>
+      <div class="card"><h2>Salmon Bowl</h2><p>Omega-3 rich recovery meal.</p><button>Explore</button></div>
+      <div class="card"><h2>Greek Yogurt Parfait</h2><p>Healthy dessert with protein.</p><button>Explore</button></div>
+    </div>
+    <button class="carousel-btn right" onclick="moveCarousel('recipe', 1)">›</button>
+  </section>
+
+  <footer>
+    © 2025 ProAthlete. All rights reserved.
+  </footer>
+
+  <script>
+    function moveCarousel(type, dir){
+      const track = type === 'diet' ? document.getElementById('dietTrack') : document.getElementById('recipeTrack');
+      const cards = track.querySelectorAll('.card').length;
+      const cardWidth = 270; // ancho + margen
+      let offset = parseInt(track.dataset.offset) || 0;
+      offset += dir * cardWidth;
+
+      // carrusel infinito
+      if(offset < -cardWidth * (cards - 4)) offset = 0;
+      if(offset > 0) offset = -cardWidth * (cards - 4);
+
+      track.style.transform = `translateX(${offset}px)`;
+      track.dataset.offset = offset;
+    }
+  </script>
+
+</body>
+</html>
