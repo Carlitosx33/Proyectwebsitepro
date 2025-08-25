@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports Managers | ProAthlete</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      text-align: center;
+    }
+
+    /* Header premium */
+    header {
+      background: linear-gradient(90deg, #b30000, #ff4d4d);
+      color: white;
+      padding: 40px 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+      letter-spacing: 1px;
+    }
+    header p {
+      font-size: 18px;
+      margin-top: 10px;
+      color: #fff;
+    }
+
+    /* Back button */
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      z-index: 10;
+    }
+    .back-btn:hover { background-color: #555; }
+
+    /* Carrusel */
+    .carousel-container {
+      position: relative;
+      width: 90%;
+      margin: 40px auto;
+      overflow: hidden;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .card {
+      flex: 0 0 280px;
+      margin: 0 10px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s;
+      position: relative;
+    }
+    .card:hover { transform: scale(1.05); }
+
+    .card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 3px solid #b30000;
+    }
+    .card h2 { color: #b30000; margin-bottom: 10px; font-size: 1.3rem; }
+    .card p { color: #555; margin-bottom: 15px; font-size: 0.95rem; }
+
+    /* Stars rating */
+    .stars {
+      color: #ffcc00;
+      margin-bottom: 10px;
+    }
+
+    /* Animated Discover Button */
+    .btn {
+      background: linear-gradient(90deg, #b30000, #ff4d4d);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .btn:hover { transform: scale(1.05); opacity: 0.9; }
+
+    /* Carousel buttons */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #b30000;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 5;
+    }
+    .carousel-btn:hover { background: #800000; }
+    .carousel-btn.left { left: -20px; }
+    .carousel-btn.right { right: -20px; }
+
+    /* Testimonios */
+    .testimonials {
+      margin: 60px auto;
+      width: 90%;
+      max-width: 1000px;
+    }
+    .testimonial-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    .testimonial-card {
+      flex: 0 0 300px;
+      background: white;
+      margin: 0 15px;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    .testimonial-card img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border: 2px solid #b30000;
+    }
+    .testimonial-card p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 5px;
+    }
+    .testimonial-card span {
+      color: #b30000;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="back-btn" onclick="window.location.href='../index.html'">⬅ Back</button>
+
+  <header>
+    <h1>Sports Managers</h1>
+    <p>Connect with top professionals to elevate your career</p>
+  </header>
+
+  <!-- Carrusel 1: Main Managers -->
+  <div class="carousel-container">
+    <button class="carousel-btn left" onclick="moveCarousel('carousel1', -1)">‹</button>
+    <div class="carousel-track" id="carousel1">
+      <div class="card">
+        <img src="https://via.placeholder.com/100?text=Manager+1" alt="">
+        <h2>Career Guidance</h2>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>Experts helping you take the right steps.</p>
+        <button class="btn">Discover</button>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/100?text=Manager+2" alt="">
+        <h2>Networking</h2>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <p>Connect with clubs, scouts, and opportunities.</p>
+        <button class="btn">Discover</button>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/100?text=Manager+3" alt="">
+        <h2>Future Planning</h2>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>Advice to build your path in professional sports.</p>
+        <button class="btn">Discover</button>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/100?text=Manager+4" alt="">
+        <h2>Contract Specialists</h2>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <p>Handles contracts and sponsorships efficiently.</p>
+        <button class="btn">Discover</button>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/100?text=Manager+5" alt="">
+        <h2>Branding & Marketing</h2>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>Promotes your image and personal brand professionally.</p>
+        <button class="btn">Discover</button>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/100?text=Manager+6" alt="">
+        <h2>Event Coordination</h2>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <p>Organizes appearances, showcases, and events.</p>
+        <button class="btn">Discover</button>
+      </div>
+    </div>
+    <button class="carousel-btn right" onclick="moveCarousel('carousel1', 1)">›</button>
+  </div>
+
+  <!-- Carrusel 2: Advanced Managers -->
+  <div class="carousel-container">
+    <button class="carousel-btn left" onclick="moveCarousel('carousel2', -1)">‹</button>
+    <div class="carousel-track" id="carousel2">
+      <div class="card">
+        <img src="https://via.placeholder.com/100?text=Manager+7" alt="">
+        <h2>Performance Analyst</h2>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>Analyzes athlete performance for optimal results.</p>
+        <button class="btn">Discover</button>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/100?text=Manager+8" alt="">
+        <h2>Sports Lawyer</h2>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <p>Advises on contracts, sponsorships, and regulations.</p>
+        <button class="btn">Discover</button>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/100?text=Manager+9" alt="">
+        <h2>Career Mentor</h2>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>Guides athletes in long-term career planning.</p>
+        <button class="btn">Discover</button>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/100?text=Manager+10" alt="">
+        <h2>Data Analyst</h2>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <p>Provides insights to improve strategies and training.</p>
+        <button class="btn">Discover</button>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/100?text=Manager+11" alt="">
+        <h2>Academic Tutor</h2>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <p>Helps athletes balance studies and sports careers.</p>
+        <button class="btn">Discover</button>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/100?text=Manager+12" alt="">
+        <h2>Sports Tech Expert</h2>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <p>Implements wearables and apps for tracking progress.</p>
+        <button class="btn">Discover</button>
+      </div>
+    </div>
+    <button class="carousel-btn right" onclick="moveCarousel('carousel2', 1)">›</button>
+  </div>
+
+  <!-- Carrusel 3: Elite Managers -->
+  <div class="carousel-container">
+    <button class="carousel-btn left" onclick="moveCarousel('carousel3', -1)">‹</button>
+    <div class="carousel-track" id="carousel3">
+      <div class="card">
+        <img src="https://via.placeholder.com/100?text=Manager+13" alt="">
+        <h2>Sports Agent</h2>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>Manages sponsorships, contracts, and promotion.</p>
+        <button class="btn">Discover</button>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/100?text=Manager+14" alt="">
+        <h2>Biomechanics Expert</h2>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <p>Improves technique and prevents injuries through analysis.</p>
+        <button class="btn">Discover</button>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/100?text=Manager+15" alt="">
+        <h2>Massage Therapist</h2>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <p>Supports recovery and physical wellbeing of athletes.</p>
+        <button class="btn">Discover</button>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/100?text=Manager+16" alt="">
+        <h2>Orthopedist</h2>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>Expert in bone and joint care for athletes.</p>
+        <button class="btn">Discover</button>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/100?text=Manager+17" alt="">
+        <h2>Strength Coach</h2>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>Builds power, endurance, and conditioning programs.</p>
+        <button class="btn">Discover</button>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com
