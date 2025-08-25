@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports Resources | ProAthlete</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      text-align: center;
+    }
+
+    header {
+      background-color: #b30000;
+      color: white;
+      padding: 2rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin: 10px 0 0 0;
+      font-size: 1.2rem;
+    }
+
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      z-index: 10;
+    }
+
+    .back-btn:hover {
+      background-color: #555;
+    }
+
+    .section {
+      margin: 40px auto;
+      max-width: 1200px;
+      padding: 0 20px;
+    }
+
+    .section h2 {
+      color: #b30000;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .card {
+      min-width: 250px;
+      background: white;
+      border-radius: 12px;
+      margin: 0 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 15px;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      color: #b30000;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 8px 15px;
+      background-color: #b30000;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background-color: #800000;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #b30000;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 50%;
+      z-index: 2;
+    }
+
+    .carousel-btn:hover {
+      background: #800000;
+    }
+
+    .carousel-btn.prev {
+      left: 10px;
+    }
+
+    .carousel-btn.next {
+      right: 10px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 15px;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <button class="back-btn" onclick="window.location.href='../index.html'">← Back</button>
+
+  <header>
+    <h1>Sports Resources</h1>
+    <p>Access supplements, recovery essentials, and athletic gear.</p>
+  </header>
+
+  <!-- Sección 1: Suplementos -->
+  <div class="section">
+    <h2>Supplements</h2>
+    <div class="carousel">
+      <button class="carousel-btn prev" onclick="moveCarousel('supplements', -1)">&#10094;</button>
+      <div class="carousel-track" id="supplements">
+        <div class="card"><img src="https://via.placeholder.com/250x160?text=Protein+Powder"><h3>Protein Powder</h3><a href="#" class="btn">Shop</a></div>
+        <div class="card"><img src="https://via.placeholder.com/250x160?text=Creatine"><h3>Creatine</h3><a href="#" class="btn">Shop</a></div>
+        <div class="card"><img src="https://via.placeholder.com/250x160?text=BCAA"><h3>BCAA</h3><a href="#" class="btn">Shop</a></div>
+        <div class="card"><img src="https://via.placeholder.com/250x160?text=Pre-Workout"><h3>Pre-Workout</h3><a href="#" class="btn">Shop</a></div>
+        <div class="card"><img src="https://via.placeholder.com/250x160?text=Multivitamin"><h3>Multivitamin</h3><a href="#" class="btn">Shop</a></div>
+        <div class="card"><img src="https://via.placeholder.com/250x160?text=Glutamine"><h3>Glutamine</h3><a href="#" class="btn">Shop</a></div>
+      </div>
+      <button class="carousel-btn next" onclick="moveCarousel('supplements', 1)">&#10095;</button>
+    </div>
+  </div>
+
+  <!-- Sección 2: Recovery -->
+  <div class="section">
+    <h2>Injury & Recovery Essentials</h2>
+    <div class="carousel">
+      <button class="carousel-btn prev" onclick="moveCarousel('recovery', -1)">&#10094;</button>
+      <div class="carousel-track" id="recovery">
+        <div class="card"><img src="https://via.placeholder.com/250x160?text=Kinesio+Tape"><h3>Kinesio Tape</h3><a href="#" class="btn">Shop</a></div>
+        <div class="card"><img src="https://via.placeholder.com/250x160?text=Knee+Brace"><h3>Knee Brace</h3><a href="#" class="btn">Shop</a></div>
+        <div class="card"><img src="https://via.placeholder.com/250x160?text=Cold+Pack"><h3>Cold Pack</h3><a href="#" class="btn">Shop</a></div>
+        <div class="card"><img src="https://via.placeholder.com/250x160?text=Elastic+Bandage"><h3>Elastic Bandage</h3><a href="#" class="btn">Shop</a></div>
+        <div class="card"><img src="https://via.placeholder.com/250x160?text=Foam+Roller"><h3>Foam Roller</h3><a href="#" class="btn">Shop</a></div>
+        <div class="card"><img src="https://via.placeholder.com/250x160?text=Massage+Ball"><h3>Massage Ball</h3><a href="#" class="btn">Shop</a></div>
+      </div>
+      <button class="carousel-btn next" onclick="moveCarousel('recovery', 1)">&#10095;</button>
+    </div>
+  </div>
+
+  <!-- Sección 3: Apparel -->
+  <div class="section">
+    <h2>Apparel & Accessories</h2>
+    <div class="carousel">
+      <button class="carousel-btn prev" onclick="moveCarousel('apparel', -1)">&#10094;</button>
+      <div class="carousel-track" id="apparel">
+        <div class="card"><img src="https://via.placeholder.com/250x160?text=Sports+Jacket"><h3>Sports Jacket</h3><a href="#" class="btn">Shop</a></div>
+        <div class="card"><img src="https://via.placeholder.com/250x160?text=Training+Shirt"><h3>Training Shirt</h3><a href="#" class="btn">Shop</a></div>
+        <div class="card"><img src="https://via.placeholder.com/250x160?text=Headband"><h3>Sweat Headband</h3><a href="#" class="btn">Shop</a></div>
+        <div class="card"><img src="https://via.placeholder.com/250x160?text=Gym+Gloves"><h3>Gym Gloves</h3><a href="#" class="btn">Shop</a></div>
+        <div class="card"><img src="https://via.placeholder.com/250x160?text=Compression+Socks"><h3>Compression Socks</h3><a href="#" class="btn">Shop</a></div>
+        <div class="card"><img src="https://via.placeholder.com/250x160?text=Sweat+Bands"><h3>Sweat Bands</h3><a href="#" class="btn">Shop</a></div>
+      </div>
+      <button class="carousel-btn next" onclick="moveCarousel('apparel', 1)">&#10095;</button>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 ProAthlete. All rights reserved.
+  </footer>
+
+  <script>
+    function moveCarousel(id, direction) {
+      const track = document.getElementById(id);
+      const cards = track.querySelectorAll(".card");
+      const cardWidth = cards[0].offsetWidth + 20; // ancho + margin
+      let currentTransform = getComputedStyle(track).transform;
+      let matrix = currentTransform !== "none" ? new DOMMatrix(currentTransform) : { m41: 0 };
+      let offset = matrix.m41 + direction * -cardWidth;
+
+      // carrusel infinito
+      const maxOffset = -(cardWidth * (cards.length - 4));
+      if (offset < maxOffset) offset = 0;
+      if (offset > 0) offset = maxOffset;
+
+      track.style.transform = `translateX(${offset}px)`;
+    }
+  </script>
+</body>
+</html>
