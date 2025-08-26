@@ -160,7 +160,8 @@
 </head>
 <body>
 
-  <button class="back-btn" onclick="window.location.href='../index.html'">⬅ Back</button>
+  <!-- 🔹 Botón corregido -->
+  <button class="back-btn" onclick="window.location.href='index.html'">⬅ Back</button>
 
   <header>
     <h1>Sports Managers</h1>
@@ -307,4 +308,16 @@
         <button class="btn">Discover</button>
       </div>
       <div class="card">
-        <img src="https://via.placeholder.com
+        <img src="https://via.placeholder.com/100?text=Manager+18" alt="">
+        <h2>Nutrition Expert</h2>
+        <div class="stars">⭐⭐⭐⭐</div>
+        <p>Designs diets and nutrition plans for peak performance.</p>
+        <button class="btn">Discover</button>
+      </div>
+    </div>
+    <button class="carousel-btn right" onclick="moveCarousel('carousel3', 1)">›</button>
+  </div>
+
+</body>
+</html>
+
